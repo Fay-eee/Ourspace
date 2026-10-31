@@ -7,6 +7,7 @@
   let hovered=null,letters=[],lastPointer=null,raf=0,lastTime=0;
   const states=new WeakMap();
   function prepare(element){
+    if(element.classList.contains('handwritten-ready'))return;
     const walker=document.createTreeWalker(element,NodeFilter.SHOW_TEXT);
     const nodes=[];let text;
     while(text=walker.nextNode())if(text.textContent.trim()&&!text.parentElement.closest('.ink-letter'))nodes.push(text);

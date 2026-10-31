@@ -44,6 +44,12 @@ def run():
     for source in ('local.css', 'myspace.css'):
         for value in re.findall(r'url\([\'"]?([^\)\'\"]+)', (ROOT / source).read_text()):
             check(value, source)
+    manifest_path = ROOT / 'handwritten-assets.js'
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text().split('=', 1)[1].strip().rstrip(';'))
+        for asset in manifest.values():
+            check(asset['src'])
+            assert asset['width'] > 0 and asset['height'] > 0
     config = json.loads(re.search(r'window.appConfig=(\{.*?\});', html).group(1))
     for key in ('presets', 'svgMeta', 'timeline_en', 'timeline_fr', 'shadersBundle', 'info_json'):
         check(config[key], 'assets/entry.js')

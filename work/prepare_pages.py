@@ -7,8 +7,8 @@ import re
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / '_site'
-FILES = ['index.html', 'local.css', 'myspace.css', 'local.js', 'transitions.js',
-         'ourspace.js', 'myspace.js', 'interactive-text.js', 'brush-cursor.js', 'SOURCES.md']
+FILES = ['index.html', 'loading.js', 'local.css', 'myspace.css', 'local.js', 'transitions.js',
+         'ourspace.js', 'myspace.js', 'interactive-text.js', 'handwritten-assets.js', 'handwritten-pictures.js', 'brush-cursor.js', 'SOURCES.md']
 
 def prepare():
     if OUTPUT.exists():

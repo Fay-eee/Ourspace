@@ -17,3 +17,6 @@ https://dh14yw95vdh5m.cloudfront.net/css/build/main.d7bab56db5afb3faecff25cb6b79
 
 
 白框提示及故事正文另采用 Coming Soon（Google Fonts 官方仓库 `apache/comingsoon`），用于接近原作较细、较疏朗的手写质感。字体文件为 `assets/fonts/ComingSoon-Regular.ttf`，授权文本为 `assets/fonts/LICENSE-ComingSoon.txt`。原作提示本身是逐笔矢量动画，新提示使用字体与逐字互动，二者并非同一套字形。
+
+
+2026-11-01：七处固定提示改用生成的透明底手绘文字 PNG，位于 `assets/handwritten/`。参照用户提供的耳机提示笔画风格生成新英文句子，并以独立素材保存。原 PNG 未改写像素，`handwritten-assets.js` 记录显示视口；`handwritten-pictures.js` 提供加载备用文字、可读文本及图片形变。Coming Soon 仅用于正文与图片加载前的文字。

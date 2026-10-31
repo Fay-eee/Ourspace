@@ -8,8 +8,8 @@ NAME = 'ourspace-github'
 RELEASES = ROOT / 'releases'
 FOLDER = RELEASES / NAME
 ARCHIVE = RELEASES / (NAME + '-20261101.zip')
-FILES = ['index.html', 'local.css', 'myspace.css', 'local.js', 'transitions.js',
-         'ourspace.js', 'myspace.js', 'interactive-text.js', 'brush-cursor.js',
+FILES = ['index.html', 'loading.js', 'local.css', 'myspace.css', 'local.js', 'transitions.js',
+         'ourspace.js', 'myspace.js', 'interactive-text.js', 'handwritten-assets.js', 'handwritten-pictures.js', 'brush-cursor.js',
          '.gitignore', '.nojekyll', 'start.command', 'README.md', 'DEPLOYMENT.md',
          'REVIEW.md', 'SOURCES.md', 'SOURCES.json']
 HELPERS = ['serve.py', 'check_site.py', 'prepare_pages.py', 'package_release.py']
