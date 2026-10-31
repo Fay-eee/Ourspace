@@ -261,3 +261,18 @@ body.ourspace-continuation.ourspace-brush-ready,body.ourspace-continuation.oursp
   #ourspace-weather .space-prompt { padding:11px 14px; }
   #ourspace-weather .community-story { width:min(100%,300px); }
 }
+
+/* Calibrated by visible PNG ink height, not by each image's unequal canvas size. */
+#ourspace-weather .weather-dialogue,
+#ourspace-weather .space-prompt { padding:10px 14px; width:fit-content; max-width:min(360px,calc(100vw - 64px)); box-sizing:border-box; }
+#ourspace-weather .community-growth-note { max-width:min(330px,calc(100vw - 64px)); }
+#ourspace-weather .community-story { width:230px; padding:16px 16px 14px; }
+#ourspace-weather .story-title { font-size:16px; margin:9px 0 8px; line-height:1.4; }
+#ourspace-weather .story-copy { font-size:13.5px; line-height:1.6; letter-spacing:.015em; word-spacing:normal; }
+#ourspace-weather .story-mood { font-size:11px; }
+#ourspace-weather .story-credit { font-size:10px; margin-top:12px; }
+@media(max-width:700px){
+  #ourspace-weather .weather-dialogue,
+  #ourspace-weather .space-prompt { padding:10px 13px; }
+  #ourspace-weather .community-story { width:min(100%,280px); }
+}

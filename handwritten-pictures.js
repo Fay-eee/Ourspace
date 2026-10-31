@@ -12,7 +12,7 @@
       const canvas=document.createElement('canvas');canvas.className='handwritten-picture';canvas.setAttribute('aria-hidden','true');
       const ctx=canvas.getContext('2d');if(!ctx)return;
       const [sourceX,sourceY,sourceWidth,sourceHeight]=asset.viewBox.split(' ').map(Number);
-      const padding=8,inkWidth=asset.displayWidth,inkHeight=inkWidth*sourceHeight/sourceWidth;
+      const padding=5,inkWidth=asset.displayWidth,inkHeight=inkWidth*sourceHeight/sourceWidth;
       const width=inkWidth+padding*2,height=inkHeight+padding*2,ratio=Math.min(devicePixelRatio||1,2);
       canvas.width=Math.ceil(width*ratio);canvas.height=Math.ceil(height*ratio);
       canvas.style.setProperty('--handwritten-width',width+'px');
