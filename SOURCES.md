@@ -14,3 +14,6 @@ https://dh14yw95vdh5m.cloudfront.net/css/build/main.d7bab56db5afb3faecff25cb6b79
 
 
 新增界面字体：Patrick Hand，来自 Google Fonts 的 `ofl/patrickhand`，随项目自托管；许可证见 `assets/fonts/OFL-PatrickHand.txt`。该许可证仅适用于字体，不涵盖上述原作引擎或音频。
+
+
+白框提示及故事正文另采用 Coming Soon（Google Fonts 官方仓库 `apache/comingsoon`），用于接近原作较细、较疏朗的手写质感。字体文件为 `assets/fonts/ComingSoon-Regular.ttf`，授权文本为 `assets/fonts/LICENSE-ComingSoon.txt`。原作提示本身是逐笔矢量动画，新提示使用字体与逐字互动，二者并非同一套字形。

@@ -39,7 +39,7 @@
     <button class="story-seat seat-armchair" data-story="1" aria-label="Read the sage armchair story: A little room" aria-pressed="false"><span>A little room</span></button>
     <button class="story-seat seat-chair" data-story="2" aria-label="Read the golden chair story: My own pace" aria-pressed="false"><span>My own pace</span></button>
     </div><article class="community-story" hidden aria-live="polite" aria-atomic="true"><button class="story-close" aria-label="Close story">×</button><span class="story-mood"></span><h2 class="story-title"></h2><p class="story-copy"></p><small class="story-credit">An imagined voice · demo story</small></article>
-  </div><p class="community-instruction">Hover over a seat, or click to stay a while.</p><p class="community-growth-note">With every story shared, our community grows a new seat—a little more room to share and listen.</p></div></section>`;
+  </div><div class="space-prompt community-growth-note">Each story adds a seat—more room to share and listen.</div></div></section>`;
   const next=root.querySelector('.weather-next');
   const continueButton=document.createElement('button');continueButton.className='space-arrow';continueButton.setAttribute('aria-label','Continue to My Space and Our Space');continueButton.innerHTML=arrow;next.append(continueButton);
   const screens=[...hub.querySelectorAll('[data-view]')];

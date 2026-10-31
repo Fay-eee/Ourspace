@@ -202,3 +202,37 @@ body.ourspace-continuation.ourspace-brush-ready,body.ourspace-continuation.oursp
 #ourspace-weather .mood-map svg > g:nth-child(2) > g:nth-child(2) { fill:#88713a; }
 #ourspace-weather .mood-map svg > g:nth-child(2) > g:nth-child(3) { fill:#587898; }
 #ourspace-weather .mood-map svg > g:nth-child(2) > g:nth-child(4) { fill:#55765f; }
+
+/* Dialogue ink: finer, darker handwriting with the opening's more open spacing. */
+@font-face {
+  font-family:'Ourspace Dialogue';
+  src:url('assets/fonts/ComingSoon-Regular.ttf') format('truetype');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+#ourspace-weather :is(.weather-dialogue,.space-prompt,.community-story,.journal-tools,.mood-dialog) {
+  --ink-font:'Ourspace Dialogue','Ourspace Hand',cursive;
+  font-family:var(--ink-font);
+  font-weight:400;
+  font-synthesis:none;
+  letter-spacing:.035em;
+  word-spacing:.065em;
+}
+#ourspace-weather :is(.weather-dialogue p,.space-prompt,.story-title,.story-copy,.journal-tools p,.mood-dialog h2,.mood-dialog > p) {
+  color:#080808;
+  font-weight:400;
+}
+#ourspace-weather :is(.weather-dialogue p,.space-prompt) { line-height:1.45; }
+#ourspace-weather .story-copy { line-height:1.65; }
+#ourspace-weather .community-growth-note {
+  max-width:570px;
+  margin:18px auto 0;
+  padding:13px 24px;
+  font-size:16px;
+}
+#ourspace-weather .mood-dialog .meter-words button { letter-spacing:0; word-spacing:0; font-size:12px; }
+@media(max-width:700px){
+  #ourspace-weather .community-growth-note { font-size:14px; padding:13px 18px; }
+  #ourspace-weather .mood-dialog .meter-words button { font-size:11px; }
+}
