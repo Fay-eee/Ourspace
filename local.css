@@ -1,0 +1,44 @@
+/* Present the story without the original publisher navigation or information UI. */
+#legacy-ui-hooks,
+#menu-header-container,
+#intro-aboutbtn-container,
+#pause-aboutbtn-container,
+#info-page,
+#logos-container { display: none !important; }
+#local-error { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); max-width: 80%; padding: 12px 20px; border-radius: 12px; background: #fff; z-index: 30000; font: 14px/1.5 sans-serif; }
+
+/* Original Ourspace weather chapter: pencil strokes on a quiet, shifting wash. */
+body.ourspace-continuation #main,
+body.ourspace-continuation .ui-buttons-container,
+body.ourspace-continuation #instructions-arrow-container { opacity:0 !important; pointer-events:none !important; }
+#ourspace-weather[hidden], #ourspace-weather [hidden] { display:none !important; }
+#ourspace-weather { position:fixed; inset:0; z-index:20000; overflow:auto; color:#59534e; opacity:0; transition:opacity .7s; background:radial-gradient(ellipse at 52% 44%,#e8dfe947,transparent 48%),radial-gradient(ellipse at 6% 90%,#dff1e65c,transparent 60%),#f7f7f3; font-family:'Ourspace Hand', 'Comic Sans MS','Chalkboard SE',cursive; }
+#ourspace-weather::before { content:''; position:fixed; inset:0; background:url('assets/images/common/noise_couleur0.jpg') repeat; opacity:.055; mix-blend-mode:multiply; pointer-events:none; }
+#ourspace-weather.is-visible { opacity:1; }
+.weather-content,.weather-next { min-height:100%; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 5vw; }
+.weather-options { width:min(100%,1000px); display:grid; grid-template-columns:repeat(6,1fr); gap:18px; margin:0 auto 70px; }
+.weather-choice { color:inherit; background:transparent; border:0; border-radius:50%; padding:8px; cursor:pointer; font:inherit; -webkit-tap-highlight-color:transparent; transition:opacity .5s,background .3s; }
+.weather-choice svg { width:100%; max-width:130px; overflow:visible; }
+.weather-choice span { display:block; font-size:15px; margin-top:10px; opacity:1; transition:opacity .3s; }
+.weather-choice:hover span,.weather-choice:focus-visible span,.weather-choice[aria-pressed=true] span { opacity:1; }
+.weather-choice:focus-visible { outline:none; }
+.weather-choice span, .weather-choice:focus-visible span { text-decoration:none; }
+.weather-back:focus-visible { outline:1px dashed #8b8278; outline-offset:8px; }
+.weather-ink,.chosen-weather { fill:none; stroke:#746b60; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; transform-origin:center; }
+.weather-ink .sun-fill,.chosen-weather .sun-fill { fill:#e1d67b; fill-opacity:.55; stroke:#b7ad65; }
+.weather-ink .sun-rays,.chosen-weather .sun-rays { stroke:#c4bd76; stroke-width:2.4; }
+.weather-ink .rain,.chosen-weather .rain { stroke:#9fbfc9; stroke-width:2.7; }
+.weather-ink .lightning,.chosen-weather .lightning { fill:#dedb9d; stroke:#b4b478; }
+.has-selection .weather-choice[aria-pressed=false] { opacity:.2; }
+.has-selection .weather-choice[aria-pressed=true] { background:#e5dfc72b; }
+.weather-dialogue { text-align:center; border:1px solid #a59d8f55; border-radius:24px 21px 25px 22px; background:#fff8; padding:18px 24px; max-width:440px; }
+.weather-dialogue p,.next-copy { font-size:clamp(21px,2.1vw,29px); line-height:1.65; margin:0; font-weight:400; }
+.weather-hint { display:block; font:13px/1.6 sans-serif; letter-spacing:.04em; color:#918a81; margin-top:12px; }
+.weather-mobile-break { display:none; }
+.chosen-weather { width:120px; height:120px; margin-bottom:40px; }
+.next-copy { text-align:center; }
+.weather-back { font-family:inherit; font-size:14px; line-height:1.5; color:#8b8278; background:transparent; border:0; border-bottom:1px solid #b6aea3; padding:4px; margin-top:52px; cursor:pointer; }
+@media(max-width:650px){ .weather-options { grid-template-columns:repeat(3,1fr); gap:16px 22px; max-width:400px; margin-bottom:40px; } .weather-choice span { opacity:.75; font-size:13px; margin-top:0; } .weather-choice svg { max-width:95px; } .weather-dialogue { padding:22px 18px; } .weather-mobile-break{ display:initial; } }
+@media(prefers-reduced-motion:reduce){#ourspace-weather,.weather-choice { transition:none; }}
+
+.weather-dialogue p { font-size:clamp(17px,1.65vw,22px); line-height:1.55; }

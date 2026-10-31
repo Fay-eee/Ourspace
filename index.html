@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ourspace</title><meta name="description" content="Ourspace — an interactive space."><link rel="icon" href="data:,"><link rel="stylesheet" href="vendor/original.css"><link rel="stylesheet" href="local.css?v=20261031-weather-simple"><link rel="stylesheet" href="myspace.css?v=20261101-pages-review"></head><body><div id="local-error" role="alert" hidden></div>
+		<!-- <div id="background"></div> -->
+		<div id="main">
+			<div id="renderer"></div>
+		</div>
+
+
+		<!-- Empty compatibility hooks for the original renderer; no visible information UI. -->
+		<div id="legacy-ui-hooks" hidden inert aria-hidden="true">
+			<div id="menu-header-container"></div>
+			<div id="menu-header-logo"></div>
+			<div id="menu-header-info-container"></div>
+			<div id="menu-header-info"></div>
+			<div id="menu-header-share-container"></div>
+			<div id="menu-header-share"></div>
+			<div id="menu-header-fs-container"></div>
+			<div id="menu-header-fs"></div>
+			<div id="menu-header-language"></div>
+			<div id="intro-aboutbtn-container"></div>
+			<div id="intro-aboutbtn-buttons"></div>
+			<div id="intro-aboutbtn"></div>
+			<div id="intro-aboutbtn-img"></div>
+			<div id="pause-aboutbtn-container"></div>
+			<div id="pause-aboutbtn-buttons"></div>
+			<div id="pause-aboutbtn"></div>
+			<div id="pause-aboutbtn-img"></div>
+			<div id="menu-button"></div>
+			<div id="menu-button-image"></div>
+			<div id="info-page"></div>
+			<div id="info-page-header"></div>
+			<div id="info-back-button"></div>
+			<div id="info-page-header-text"></div>
+			<div id="about-page"></div>
+			<div id="share-page"></div>
+			<div id="share-facebook"></div>
+			<div id="facebook-logo"></div>
+			<div id="share-twitter"></div>
+			<div id="twitter-logo"></div>
+			<div id="share-link-container"></div>
+			<div id="share-btn-link"></div>
+			<div id="sharelink-logo"></div>
+			<div id="share-link"></div>
+			<div id="credits-page"></div>
+		</div>
+
+		<!-- intro and logos -->
+		<div id="error" class="alt-text-container center error-txt-container"><div class="alt-text center" id="error-txt">
+				<div id="error-title" class="en"></div>
+				<div class="error-sep">__________________</div><br>
+				Hi! Unfortunately,<br>
+				Brainstream doesn't work<br>
+				on this version of your browser.<br>
+				Try updating your<br>
+				software and reloading<br>
+				this page so we can<br>
+				go exploring.<br><br><br>
+			</div>
+		</div>
+		
+		<div id="logos-background"></div>
+		<div id="loader" class="loader">
+			<div id="loader-content">
+				<div id="loader-txt" class="en"></div>
+			</div>
+		</div>
+
+
+
+
+		<div id="early-end-buttons-container" class="ui-buttons-container">
+			<div id="early-end-buttons" class="ui-buttons en">
+				<div id="early-end-question" class="ui-question en"></div>
+				<div class="break"></div>
+				<button id="early-end-continue" class="ui-btn en pressable"><div id="early-end-continue-img" class="ui-btn-img en"></div></button>
+				<button id="early-end-stop" class="ui-btn en pressable"><div id="early-end-stop-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+
+		<div id="timeselect-buttons-container" class="ui-buttons-container">
+			<div id="timeselect-buttons" class="ui-buttons">
+				<div id="timeselect-question" class="ui-question en"></div>
+				<div class="break"></div>
+				<button id="timeselect-short" class="ui-btn pressable"><div id="timeselect-short-img" class="ui-btn-img en"></div></button>
+				<button id="timeselect-long" class="ui-btn pressable"><div id="timeselect-long-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+
+		<div id="instructions-headphones-container" class="ui-buttons-container">
+			<div id="instructions-headphones" class="ui-buttons">
+				<div id="instructions-headphones-img" class="ui-text en"></div>
+			</div>
+		</div>
+		<div id="instructions-glissez-container" class="ui-buttons-container">
+			<div id="instructions-glissez" class="ui-buttons">
+				<div id="instructions-glissez-img" class="ui-text en"></div>
+			</div>
+		</div>		
+		<div id="instructions-arrow-container">
+			<div id="instructions-arrow-buttons" class="ui-buttons">
+				<button id="instructions-arrow" class="ui-btn simple-toggle"><div id="instructions-arrow-img" class="ui-btn-img"></div></button>
+			</div>
+		</div>
+		<div id="instructions-enter-live-container">
+			<div id="instructions-enter-live-buttons" class="ui-buttons">
+				<button id="instructions-enter-live" class="ui-btn simple-toggle"><div id="instructions-enter-live-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+		<div id="instructions-enter-container">
+			<div id="instructions-enter-buttons" class="ui-buttons">
+				<button id="instructions-enter" class="ui-btn simple-toggle"><div id="instructions-enter-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+		<div id="end-buttons-container" class="ui-buttons-container">
+			<div id="end-buttons" class="ui-buttons">
+				<button id="end-credits" class="ui-btn pressable end"><div id="end-credits-img" class="ui-btn-img en"></div></button>
+				<div class="end-button-sep"></div>
+				<button id="end-share" class="ui-btn pressable end"><div id="end-share-img" class="ui-btn-img en"></div></button>
+				<div class="end-button-sep"></div>
+				<button id="end-restart" class="ui-btn pressable end"><div id="end-restart-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+
+		<div id="pause-container" class="ui-buttons-container en">
+			<div id="pause-buttons" class="ui-buttons">
+				<button id="pause" class="ui-btn pressable en"><div id="pause-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+
+		<div id="pause-timecode-container" class="en">
+			<div id="timecode-0" class="timecode-number"></div>
+			<div id="timecode-1" class="timecode-number"></div>
+			<div id="timecode-seconds" class="timecode-number timecode-seconds"></div>
+			<div id="timecode-2" class="timecode-number"></div>
+			<div id="timecode-3" class="timecode-number"></div>
+			<div id="timecode-separator" class="timecode-number timecode-separator"></div>
+			<div id="timecode-duration-0" class="timecode-number"></div>
+			<div id="timecode-duration-1" class="timecode-number"></div>
+			<div id="timecode-duration-seconds-2" class="timecode-number timecode-seconds"></div>
+			<div id="timecode-duration-2" class="timecode-number"></div>
+			<div id="timecode-duration-3" class="timecode-number"></div>
+			<!-- <div id="timecode-final"></div> -->
+		</div>
+
+		<div id="pause-headphones-container" class="en">
+			<div id="pause-headphones" class="en"></div>
+		</div>
+
+		<div id="pause-restart-container" class="ui-buttons-container en">
+			<div id="pause-restart-buttons" class="ui-buttons en">
+				<button id="pause-restart" class="ui-btn pressable en"><div id="pause-restart-img" class="ui-btn-img en"></div></button>
+			</div>
+		</div>
+
+		<script>window.appConfig={"static_root": "./assets/", "temp_page": false, "presets": "../data/presets.json", "svgMeta": "../data/svg-meta.json?v=20261031ourspace", "shadersBundle": "data/build/shaders.ef8267bf46e35250cd88.json", "timeline_en": "../data/timeline.json", "timeline_fr": "../data/timeline.json", "info_json": "data/build/info.8b51206a5243ede832a9.json", "ENABLE_AUTO_FTP": false};</script><script src="local.js?v=20261031-routing-fix"></script><script src="transitions.js?v=20261031-community-motion"></script><script src="ourspace.js?v=20261031-motion"></script><script src="myspace.js?v=20261101-pages-review"></script><script src="interactive-text.js?v=20261101-pages-review"></script><script src="brush-cursor.js?v=20261101-pages-review"></script><script src="vendor/brainstream-engine.js?v=20261101-pages-review"></script></body></html>
