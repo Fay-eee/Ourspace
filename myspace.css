@@ -276,3 +276,10 @@ body.ourspace-continuation.ourspace-brush-ready,body.ourspace-continuation.oursp
   #ourspace-weather .space-prompt { padding:10px 13px; }
   #ourspace-weather .community-story { width:min(100%,280px); }
 }
+
+/* Subsequent chapters share the opening engine's live breathing light. */
+#ourspace-native-background { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:19999; display:none; }
+body.ourspace-continuation.ourspace-native-background-ready #ourspace-native-background { display:block; }
+body.ourspace-native-background-ready #ourspace-weather { background:transparent; }
+body.ourspace-native-background-ready #ourspace-weather::before,
+body.ourspace-native-background-ready #ourspace-weather::after { display:none; }

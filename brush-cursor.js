@@ -2,6 +2,18 @@
 (() => {
   const fine=matchMedia('(hover: hover) and (pointer: fine)');
   let canvas=null,active=false;
+  // Copy the original background shader before the engine draws its cursor.
+  // Both passes retain the original uniforms, clocks and mouse response.
+  const backdrop=document.createElement('canvas');
+  backdrop.id='ourspace-native-background';backdrop.setAttribute('aria-hidden','true');
+  const backdropContext=backdrop.getContext('2d',{alpha:false});
+  document.body.append(backdrop);
+  window.OurspaceCaptureBackground=source=>{
+    if(!backdropContext)return;
+    if(backdrop.width!==source.width||backdrop.height!==source.height){backdrop.width=source.width;backdrop.height=source.height;}
+    backdropContext.drawImage(source,0,0);
+    document.body.classList.add('ourspace-native-background-ready');
+  };
   function lift(){
     if(!canvas)return;
     if(typeof canvas.showPopover==='function'){
@@ -12,7 +24,7 @@
     }
   }
   function activate(){
-    if(active||!fine.matches||!document.body.classList.contains('ourspace-continuation'))return;
+    if(active||!document.body.classList.contains('ourspace-continuation'))return;
     const renderer=window.renderer,sequenceRenderer=window.SequenceRenderer;
     if(!renderer?.domElement||!sequenceRenderer?.cursorScene||!window.jQuery)return;
     canvas=renderer.domElement;
@@ -24,7 +36,7 @@
       window.OurspaceNativeCursorReady=false;
     });
     canvas.addEventListener('webglcontextrestored',()=>{canvas.hidden=false;lift();});
-    active=true;window.OurspaceNativeCursorActive=true;
+    active=true;window.OurspaceNativeCursorActive=true;canvas.hidden=!fine.matches;
     lift();
   }
   // Deliver the same native mouse data to the two original #main input handlers.
@@ -44,7 +56,7 @@
     if(records.some(r=>r.attributeName==='open'))lift();
   }).observe(document.body,{attributes:true,attributeFilter:['class','open'],subtree:true});
   fine.addEventListener?.('change',()=>{
-    if(!fine.matches&&active){window.OurspaceNativeCursorActive=false;document.body.classList.remove('ourspace-brush-ready');canvas.hidden=true;}
+    if(!fine.matches&&active){document.body.classList.remove('ourspace-brush-ready');canvas.hidden=true;}
     else if(fine.matches&&active){canvas.hidden=false;window.OurspaceNativeCursorActive=true;if(window.OurspaceNativeCursorReady)document.body.classList.add('ourspace-brush-ready');lift();}
     else activate();
   });
